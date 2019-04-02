@@ -1,1 +1,1 @@
-web: gunicorn pubsubat.wsgi
+web: gunicorn --pythonpath pubsubat pubsubat.wsgi
