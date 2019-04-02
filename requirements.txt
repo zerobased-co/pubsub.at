@@ -6,3 +6,4 @@ django-summernote
 graphene-django
 Pillow
 django-heroku
+gunicorn
