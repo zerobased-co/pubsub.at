@@ -1,0 +1,8 @@
+Django
+django-filter
+django-graphql-jwt
+django-graphql-playground
+django-summernote
+graphene-django
+Pillow
+django-heroku
