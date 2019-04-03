@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'graphene_django',
     'graphql_playground',
+    'corsheaders',
 ] + [
     'pubsub',
 ]
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -152,3 +154,11 @@ GRAPHENE = {
 
 # For Django-Heroku
 django_heroku.settings(locals())
+
+# For testing
+#CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = (
+    'pubsub.at',
+    'localhost:8000',
+    'localhost:8080',
+)
