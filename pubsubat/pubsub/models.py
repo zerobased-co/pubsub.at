@@ -6,6 +6,14 @@ class User(AbstractUser):
     pass
 
 
+class CUDTBaseModel(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+
+
 class Category(models.Model):
     name = models.CharField(max_length=150)
 
@@ -36,7 +44,7 @@ class SubscribeOption(models.Model):
         return '{} - {}'.format(self.publisher.name, self.name)
 
 
-class Subscription(models.Model):
+class Subscription(CUDTBaseModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
     subscribe_option = models.ForeignKey(SubscribeOption, on_delete=models.SET_NULL, null=True, blank=True)
