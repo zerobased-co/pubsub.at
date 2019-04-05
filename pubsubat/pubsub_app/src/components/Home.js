@@ -19,7 +19,7 @@ const query = gql`
 }
 `;
 
-class List extends Component {
+class Home extends Component {
   render() {
     let { data } = this.props
     if (data.loading || !data.subscriptions) {
@@ -37,5 +37,5 @@ class List extends Component {
   }
 }
 
-List = graphql(query)(List)
-export default List
+Home = graphql(query)(Home)
+export default Home

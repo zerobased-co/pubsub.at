@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import Header from './Header'
-import List from './List'
+import Home from './Home'
 import Login from './Login'
 
 class App extends Component {
@@ -11,10 +11,8 @@ class App extends Component {
       <div>
         <Header />
         <div>
-          <Switch>
-            <Route exact path="/" component={List} />
-            <Route exact path="/login/" component={Login} />
-          </Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login/" component={Login} />
         </div>
       </div>
     )
