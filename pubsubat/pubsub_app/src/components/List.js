@@ -19,10 +19,9 @@ const query = gql`
 }
 `;
 
-class ListView extends Component {
+class List extends Component {
   render() {
     let { data } = this.props
-    console.log(data);
     if (data.loading || !data.subscriptions) {
       return <div>Loading...</div>
     }
@@ -38,5 +37,5 @@ class ListView extends Component {
   }
 }
 
-ListView = graphql(query)(ListView)
-export default ListView
+List = graphql(query)(List)
+export default List

@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const BundleTracker = require('webpack-bundle-tracker');
 
 module.exports = {
   entry: './src/index.js',
@@ -15,15 +16,20 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
+    path: __dirname + '/dist/static',
+    publicPath: '/static/',
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new BundleTracker({
+      path: __dirname + '/dist/static/',
+      filename: 'webpack-stats.json'
+    }),
   ],
   devServer: {
     contentBase: './dist',
-    hot: true
+    hot: true,
+    historyApiFallback: true,
   }
 };

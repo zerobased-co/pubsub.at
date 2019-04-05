@@ -55,6 +55,7 @@ coverage.xml
 *.log
 local_settings.py
 db.sqlite3
+staticfiles
 
 # Flask stuff:
 instance/
@@ -107,3 +108,4 @@ venv.bak/
 
 # For frontend
 node_modules/
+webpack-stats.json
