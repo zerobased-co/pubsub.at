@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
+import Button from '@material-ui/core/Button';
 import { AUTH_TOKEN } from '../constants'
 
 
@@ -12,18 +13,18 @@ class Header extends Component {
         <h1>Pubsub.at</h1>
         <div>
         {authToken ? (
-          <div
+          <Button color="default"
             onClick={() => {
               localStorage.removeItem(AUTH_TOKEN)
               this.props.history.push(`/`)
             }}
           >
-            logout
-          </div>
+            Logout
+          </Button>
         ) : (
-          <Link to="/login">
-            login
-          </Link>
+          <Button color="primary" component={Link} to="/login">
+            Login
+          </Button>
         )}
         </div>
       </div>
