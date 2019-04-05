@@ -22,6 +22,11 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        GRAPHQL_HOST: JSON.stringify(process.env.GRAPHQL_HOST),
+      },
+    }),
     new BundleTracker({
       path: __dirname + '/dist/static/',
       filename: 'webpack-stats.json'
