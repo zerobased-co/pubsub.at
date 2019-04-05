@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const BundleTracker = require('webpack-bundle-tracker');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './pubsubat/pubsub_app/src/index.js',
   module: {
     rules: [
       {
@@ -16,7 +16,7 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   output: {
-    path: __dirname + '/dist/static',
+    path: __dirname + '/pubsubat/pubsub_app/dist/static',
     publicPath: '/static/',
     filename: 'bundle.js'
   },
@@ -28,12 +28,12 @@ module.exports = {
       },
     }),
     new BundleTracker({
-      path: __dirname + '/dist/static/',
+      path: __dirname + '/pubsubat/pubsub_app/dist/static/',
       filename: 'webpack-stats.json'
     }),
   ],
   devServer: {
-    contentBase: './dist',
+    contentBase: './pubsubat/pubsub_app/dist',
     hot: true,
     historyApiFallback: true,
   }
