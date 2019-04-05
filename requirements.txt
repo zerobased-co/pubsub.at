@@ -7,3 +7,5 @@ graphene-django
 Pillow
 django-heroku
 gunicorn
+django-cors-headers
+django-webpack-loader
