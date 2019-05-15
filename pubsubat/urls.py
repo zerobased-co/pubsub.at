@@ -14,8 +14,9 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     path('playground/', GraphQLPlaygroundView.as_view(endpoint="/graphql/")),
-    re_path(r'', index),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += [re_path(r'', index)]
